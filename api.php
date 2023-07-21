@@ -4,6 +4,7 @@
 // echo "Hello Welcome To Api Development Using Php MySQL Database"
 
 //connect to the server 
+//crud opreations
 
 $servername = "localhost";
 $user = "root";
