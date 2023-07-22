@@ -13,26 +13,19 @@ if($action == "create-user"){
     $query = "Insert into users (name, email, password) values('$name', '$email', '$password')";
     $result = $mysqli->query($query);
 
+    $response = array(
+        "error" => true,
+        "message" => "Opps User Not Created..."
+    );
+
     if($result){
-        $response = array(
-            "error" => true,
-            "message" => "User created successfully"
-        );
-
-        echo json_encode($response);
-        die();
-    } else{
-        $response = array(
-            "error" => true,
-            "message" => "Oops User not created"
-        );
-
-        echo json_encode($response);
-        die();
-    }
-
+        $response['error'] = false;
+        $response['message'] = "User Created Success :)";
+    } 
+    echo json_encode($response);
+    die();
 }
 
-die();
+exit();
 
 ?>
