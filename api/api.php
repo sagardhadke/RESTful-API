@@ -7,6 +7,7 @@ $api_key = $_SERVER["HTTP_API_KEY"] ?? '';
 $valid_api_key = "Sagar?RP251/5ysiNvCC43Bhn=ldAo6edv5imYixFUtY";
 
 if($api_key !== $valid_api_key){
+    header('HTTP/1.1 401 Unauthorized');
     $response['message'] = "Invalid API Key";
     echo json_encode($response);
     die();
@@ -52,6 +53,7 @@ if($action == "create-user"){
 
     
     }else{
+        header('HTTP/1.1 400 Not Found');
         $response['error'] = true;
         $response['message'] = "Invalid username or password";
     }
@@ -71,6 +73,7 @@ if($action == "create-user"){
 
     
     }else{
+        header('HTTP/1.1 400 Not Found');
         $response['error'] = true;
         $response['message'] = "Oops User Not Found :)";
     }
