@@ -18,5 +18,4 @@ if ($mysqli->connect_errno){
     die();
 }
 
-
 ?>
