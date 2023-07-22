@@ -60,7 +60,7 @@ if($action == "create-user"){
 
     echo json_encode($response);
 } else if($action == "get-user-details"){
-    $user_id = $_POST['id'];
+    $user_id = $_GET['id'];
 
     $query = "Select * from users where id = $user_id"; 
     $result = $mysqli->query($query);
