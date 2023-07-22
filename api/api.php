@@ -1,8 +1,18 @@
 <?php
 
-require_once('db.php');
 header('Content-Type: application/json');
 
+//server api key
+$api_key = $_SERVER["HTTP_API_KEY"] ?? '';
+$valid_api_key = "Sagar?RP251/5ysiNvCC43Bhn=ldAo6edv5imYixFUtY";
+
+if($api_key !== $valid_api_key){
+    $response['message'] = "Invalid API Key";
+    echo json_encode($response);
+    die();
+}
+
+require_once('db.php');
 $action = $_GET['action'];
 
 $response = array(
