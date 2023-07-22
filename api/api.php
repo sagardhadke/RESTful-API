@@ -1,6 +1,7 @@
 <?php
 
 require_once('db.php');
+header('Content-Type: application/json');
 
 $action = $_GET['action'];
 
